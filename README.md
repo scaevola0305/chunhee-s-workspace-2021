@@ -90,6 +90,70 @@ public class BinaryTestEx2 {
 
 
 
+package day1027.operator.sample;
 
+import java.util.Scanner;
+
+//두개의 정수를 입력받아 a, b에 저장하고 
+//둘 중 더 큰 수를 출력한다. 만약 같다면 같다고 출력한다.
+public class OperEx8 {
+
+	public static void main(String[] args) {
+
+		System.out.print("첫번째 정수를 입력해 주세요 :");
+		Scanner s = new Scanner(System.in);
+		int a = s.nextInt();
+		
+		System.out.print("두번째 정수를 입력해 주세요 :");
+		int b = s.nextInt();
+		
+		if(a > b) {
+			System.out.println("더 큰 수는 "+a+"입니다.");
+		}
+		
+		if(a < b) {
+			System.out.println("더 큰 수는 "+b+"입니다.");
+		}else {
+			System.out.println("두 수는 같습니다.");
+		}
+		
+		
+	}
+
+}
+
+
+
+package day1027.operator.sample;
+
+import java.util.Scanner;
+
+//두개의 정수를 입력받아 a, b에 저장하고 
+//둘 중 더 큰 수를 출력한다. 만약 같다면 같다고 출력한다.
+public class OperEx8 {
+
+	public static void main(String[] args) {
+
+		Scanner s = new Scanner(System.in);
+		
+		System.out.print("첫번째 숫자 : ");
+		int a = s.nextInt();
+		System.out.print("두번째 숫자 : ");
+		int b = s.nextInt();
+		
+		
+		if(a == b) {
+			System.out.println("두 개의 값은 같습니다.");
+		}else if(a > b) {
+			System.out.println(a);
+		}else{
+			System.out.println(b);
+		}
+		
+	
+		}
+		
+		
+	}
 
 
