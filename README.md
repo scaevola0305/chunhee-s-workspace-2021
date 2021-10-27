@@ -157,3 +157,35 @@ public class OperEx8 {
 	}
 
 
+
+package day1027.operator.sample;
+
+public class OperEx9 {
+
+	public static void main(String[] args) {
+
+		int a = 10;
+		int b = 20;
+		
+		boolean c = (a = a + 10) == b && b++ == a;
+		
+		System.out.println(a); //20
+		System.out.println(b); //21
+		System.out.println(c); //true
+
+
+
+package day1027.operator.sample;
+
+public class OperEx9 {
+
+	public static void main(String[] args) {
+
+		int a = 10;
+		int b = 20;
+		
+		boolean c = !((a = a + 10) == b) && b++ == a;
+		
+		System.out.println(a); //20
+		System.out.println(b); //20
+		System.out.println(c); //false
