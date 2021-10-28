@@ -259,3 +259,30 @@ public class SwitchEx2 {
 	}
 
 }
+
+
+
+
+package day1028.forex.sample;
+
+import java.util.Scanner;
+
+public class ForEx3 {
+
+	public static void main(String[] args) {
+
+		System.out.print("원하는 숫자를 입력하세요 : ");
+		
+		Scanner s = new Scanner(System.in);
+		int num = s.nextInt();
+		int i;
+		int result = 0;
+		
+		for(i = 1; i <= 9; i++) {
+		result = num * i;
+		System.out.println(num+" * "+i+" = "+result);
+	}
+
+
+	}
+}
