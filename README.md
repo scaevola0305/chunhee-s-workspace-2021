@@ -189,3 +189,39 @@ public class OperEx9 {
 		System.out.println(a); //20
 		System.out.println(b); //20
 		System.out.println(c); //false
+
+
+
+
+package day1028.ifex.sample;
+//성적을 입력하면 성적에 맞는 학점을 출력하세요
+//90~100 : "A", 80~89 : "B", 70~79 : "C", 그 외 나머지는 "F"
+
+import java.util.Scanner;
+
+public class IfEx5 {
+
+	public static void main(String[] args) {
+
+		int score;
+		char grade;
+		
+		Scanner s = new Scanner(System.in);
+		
+		System.out.print("성적을 입력하세요 : ");
+		score = s.nextInt();
+		
+		if(score >= 90) {
+			grade = 'A';
+		}else if(score >= 80) {
+			grade = 'B';
+		}else if(score >= 70) {
+			grade = 'C';
+		}else {
+			grade = 'F';
+		}
+		
+		System.out.println("당신의 학점은 "+ grade +" 등급입니다.");
+	}
+
+}
