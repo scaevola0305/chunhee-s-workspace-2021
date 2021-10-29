@@ -286,3 +286,44 @@ public class ForEx3 {
 
 	}
 }
+
+
+
+package day1028.whileex.sample;
+
+import java.util.Scanner;
+
+public class ExampleEx1 {
+
+	public static void main(String[] args) {
+
+		Scanner s = new Scanner(System.in);
+
+		
+		int balance = 0;
+		
+		boolean stop = false;
+		
+		while(!stop) {
+			System.out.print("번호를 입력하세요(1, 2, 3, 4) : ");
+			int num = s.nextInt();
+			
+			if(num == 1) {
+				System.out.print("예금액을 입력하세요 : ");
+				balance += s.nextInt();
+				System.out.println("계좌잔액은 "+balance+"입니다.");
+			}else if(num == 2) {
+				System.out.print("출금액을 입력하세요 : ");
+				balance -= s.nextInt();
+				System.out.println("계좌잔액은 "+balance+"입니다.");
+			}else if(num == 3) {
+				System.out.println("계좌잔액은 "+balance+"입니다.");
+			}else if(num == 4) {
+				stop = true;
+			}
+		}
+		System.out.println("프로그램 종료");
+		
+	}
+
+}
