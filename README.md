@@ -327,3 +327,203 @@ public class ExampleEx1 {
 	}
 
 }
+
+
+//
+
+package ncs.test1;
+
+public class Goods {
+	private String name;
+	private int price;
+	private int quantity;
+
+	public Goods() {
+	}
+
+	public Goods(String name, int price, int quantity) {
+		this.name = name;
+		this.price = price;
+		this.quantity = quantity;
+	}
+
+	@Override
+	public String toString() {
+		return "Goods [name=" + name + ", price=" + price + ", quantity=" + quantity + "]";
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}	
+	
+	
+	
+}
+
+
+
+
+package ncs.test1;
+
+import java.util.Scanner;
+
+public class GoodsTest {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("다음 항목의 값을 입력하세요");
+		System.out.print("상품명 : ");
+		String name = scan.nextLine();
+		System.out.print("가격 : ");
+		int price = scan.nextInt();
+		System.out.print("수량 : ");
+		int quantity = scan.nextInt();
+		
+		Goods goods = new Goods(name, price, quantity);
+		
+		System.out.println("입력한 결과는 다음과 같습니다.");
+		System.out.println(goods);
+		
+		System.out.println("총 구매가격 : "+ goods.getPrice() * goods.getQuantity());
+		
+	}
+
+}
+
+
+
+package ncs.test1;
+
+public class Employee {
+	
+	private String no;
+	private String name;
+	private String dept;
+	private String job;
+	private int sal;
+	
+	
+	
+	public Employee() {}
+	
+	public Employee(String no, String name, String dept, String job, int sal) {
+		this.no = no;
+		this.name = name;
+		this.dept = dept;
+		this.job = job;
+		this.sal = sal;
+	}
+
+	public String getNo() {
+		return no;
+	}
+	public void setNo(String no) {
+		this.no = no;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getDept() {
+		return dept;
+	}
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+	public String getJob() {
+		return job;
+	}
+	public void setJob(String job) {
+		this.job = job;
+	}
+	public int getSal() {
+		return sal;
+	}
+	public void setSal(int sal) {
+		this.sal = sal;
+	}
+}
+
+
+
+package ncs.test1;
+
+import java.util.Scanner;
+
+public class EmployeeTest {
+
+	public static void main(String[] args) {
+		Employee e1 = new Employee();
+		
+		e1.setNo("A1892");
+		e1.setName("이미주");
+		e1.setDept("AI개발부");
+		e1.setJob("사원");
+		e1.setSal(3500);
+		
+		Employee e2 = new Employee("B8077","유재석","Web개발부", "부장",7000);
+		Employee e3 = new Employee("F5691","신미나","총괄개발부", "전무",9000);
+		
+		Employee[] employees = {e1, e2, e3};
+		
+		EmployeeTest et = new EmployeeTest();	
+		et.search(employees);
+	}
+	// 사원이 있으면 사원 정보 출력, 사원이 없으면 "해당 사원은 없습니다" 출력 후 
+	// 다시 사원번호를 입력(반복)
+	// exit 라고 입력시 종료
+	public void search(Employee[] emps) {
+		Scanner scan = new Scanner(System.in);
+		
+		boolean run = true; //true : 반복, false : 중지
+		
+		while(run) {
+	
+		System.out.println("사원번호를 입력하세요");
+		System.out.println("exit입력시 종료됩니다.");
+		System.out.print("사원번호 > ");
+		
+		String input = scan.next();
+		int x = 0; // 0 : 사원이 없음, 0 아니면  : 사원 있음
+		
+		for(Employee e : emps) {
+			if(input.equals(e.getNo())){
+				System.out.println(
+				e.getNo()+" : "+e.getDept() +" "+e.getName() +" "+e.getJob());
+				x++;
+			}
+		}
+		if(x == 0) {
+			if(input.equals("exit")) {
+				System.out.println("종료됩니다.");
+				run = false;
+			}else {
+				System.out.println("해당 사원은 없습니다.");
+			}
+		}
+		
+		}//while
+	}//search
+	
+}
